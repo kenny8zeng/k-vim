@@ -245,12 +245,21 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " 防止tmux下vim的背景色显示异常
 " Refer: http://sunaku.github.io/vim-256color-bce.html
-if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
+" if &term =~ '256color'
+"   " disable Background Color Erase (BCE) so that color schemes
+"   " render properly when inside 256-color tmux and GNU screen.
+"   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+"   set t_ut=
+" endif
+
+" if has("termguicolors")
+"     " enable true color
+"     set termguicolors
+" endif
+
+set t_Co=256
+
+set term=screen
 
 "==========================================
 " FileEncode Settings 文件编码,格式
@@ -442,8 +451,8 @@ nnoremap <silent> g* g*zz
 noremap <silent><leader>/ :nohls<CR>
 
 " switch # *
-nnoremap # *
-nnoremap * #
+" nnoremap # *
+" nnoremap * #
 
 " for # indent, python文件中输入新行时#号注释不切回行首
 autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
@@ -651,14 +660,18 @@ if has("gui_running")
     set t_Co=256
 endif
 
-
-
 " theme主题
 set background=dark
-set t_Co=256
 
-colorscheme solarized
-" colorscheme molokai
+" colorscheme solarized
+colorscheme molokai
+" colorscheme Tomorrow-Night-Eighties
+" colorscheme darkburn.vim
+" colorscheme desert_terminal.vim
+" colorscheme Tomorrow-Night-Bright.vim
+" colorscheme Tomorrow-Night-Eighties.vim
+" colorscheme Tomorrow-Night.vim
+
 
 
 " 设置标记一列的背景颜色和数字一行颜色一致
