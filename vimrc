@@ -245,6 +245,7 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " 防止tmux下vim的背景色显示异常
 " Refer: http://sunaku.github.io/vim-256color-bce.html
+" in file .tmux.conf: set -g default-terminal "screen-256color"
 " if &term =~ '256color'
 "   " disable Background Color Erase (BCE) so that color schemes
 "   " render properly when inside 256-color tmux and GNU screen.
